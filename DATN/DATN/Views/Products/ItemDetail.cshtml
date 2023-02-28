@@ -1,0 +1,96 @@
+﻿@model DATN.Models.EF.BookingRoom
+@{
+    ViewBag.Title = "ItemDetail";
+}
+<link rel="stylesheet" type="text/css" href="~/Content/assests/styles/single_styles.css">
+<link rel="stylesheet" type="text/css" href="~/Content/assests/styles/single_responsive.css">
+@if (Model != null)
+{
+    <div class="container single_product_container">
+        <div class="row">
+            <div class="col">
+
+                <!-- Breadcrumbs -->
+
+                <div class="breadcrumbs d-flex flex-row align-items-center">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-7">
+                @if (Model.ImageRoom != null && Model.ImageRoom.Any())
+                {
+                    <div class="single_product_pics">
+                        <div class="row">
+                            <div class="col-lg-3 thumbnails_col order-lg-1 order-2">
+                                <div class="single_product_thumbnails">
+                                    <ul>
+                                        @foreach (var i in Model.ImageRoom)
+                                        {
+                                            var strImage = "";
+                                            strImage = i.src;
+                                            strImage = strImage.Substring(1);
+
+                                            <li><img src="@strImage" alt="" data-image="@strImage"></li>
+
+                                        }
+                                        @*<li><img src="images/single_1_thumb.jpg" alt="" data-image="images/single_1.jpg"></li>
+                                            <li class="active"><img src="images/single_2_thumb.jpg" alt="" data-image="images/single_2.jpg"></li>
+                                            <li><img src="images/single_3_thumb.jpg" alt="" data-image="images/single_3.jpg"></li>*@
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 image_col order-lg-2 order-1">
+                                <div class="single_product_image">
+                                    @if (Model.ImageRoom != null && Model.ImageRoom.Any())
+                                    {
+                                        var strImage1 = "";
+                                        strImage1 = @Model.ImageRoom.FirstOrDefault(x => true).src;
+                                        strImage1 = strImage1.Substring(1);
+                                        <div class="single_product_image_background" style="background-image:url(@strImage1)"></div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+            <div class="col-lg-5">
+                <div class="product_details">
+                    <div class="product_details_title">
+                        <h2>@Model.NameBookingRoom</h2>
+                        <p>Đây là trang thuê phòng uy tín và có rất nhiều các phòng trọ đẹp, rẻ phù hợp với các bạn sinh viên</p>
+                    </div>
+                    <div class="free_delivery d-flex flex-row align-items-center justify-content-center">
+                        <span class="ti-truck"></span><span>@Model.PriceBookingRoom</span>
+                    </div>
+                    <div class="product_price">@Model.PriceBookingRoom</div>
+                    <ul class="star_rating">
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                    </ul>
+                    
+                    <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
+                        <span>Yêu thích</span>
+                        <div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+}
+@section scripts{
+    <script src="~/Content/assests/js/single_custom.js"></script>
+}

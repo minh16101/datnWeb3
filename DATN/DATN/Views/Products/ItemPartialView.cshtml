@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DATN.Models.EF.BookingHotel>
+@if (Model != null && Model.Any())
+{
+    foreach (var item in Model)
+    {
+
+        var strImage1 = "";
+        if (item.ImageHotel != null && item.ImageHotel.Any())
+        {
+            strImage1 = item.ImageHotel.FirstOrDefault(x => true).src;
+            strImage1 = strImage1.Substring(1);
+        }
+        <div class="product-item nha-tro">
+            <div class="product discount product_filter">
+                <div class="product_image">
+                    <img src="@strImage1" alt="@item.NameBookingHotel">
+                </div>
+                <div class="favorite favorite_left"></div>
+                <div class="product_info">
+                    <h6 class="product_name"><a href="nha-tro">@item.NameBookingHotel</a></h6>
+                    @*<div class="product_price">@item.BookingRooms.FirstOrDefault().PriceBookingRoom</div>*@
+                </div>
+            </div>
+            <div class="red_button add_to_cart_button"><a href="#"> add to cart</a></div>
+        </div>
+        <div class="product-item phong-tro">
+            <div class="product discount product_filter">
+                <div class="product_image">
+                    <img src="~/Upload/loginback233151880.jpg" alt="">
+                </div>
+                <div class="favorite favorite_left"></div>
+                <div class="product_info">
+                    <h6 class="product_name"><a href="phong-tro"></a></h6>
+                    @*<div class="product_price">@item.BookingRooms.FirstOrDefault().PriceBookingRoom</div>*@
+                </div>
+            </div>
+            <div class="red_button add_to_cart_button"><a href="#"> add to cart</a></div>
+        </div>
+    }
+}

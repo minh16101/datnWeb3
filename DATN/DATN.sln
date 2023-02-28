@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DATN", "DATN\DATN.csproj", "{D9FD2CE7-E8CD-407E-98E9-C84B2A03C305}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9FD2CE7-E8CD-407E-98E9-C84B2A03C305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9FD2CE7-E8CD-407E-98E9-C84B2A03C305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9FD2CE7-E8CD-407E-98E9-C84B2A03C305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9FD2CE7-E8CD-407E-98E9-C84B2A03C305}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03757035-1396-4F2C-87DC-DE114018DA99}
+	EndGlobalSection
+EndGlobal
